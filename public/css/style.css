@@ -1,5 +1,5 @@
 body {
-    color: #1c1c1c;
+    color: #111111;
     font-family: 'Inter', sans-serif;
     margin-left: auto;
     margin-right: auto;
@@ -9,11 +9,13 @@ body {
     max-width: 1080px;
     background-image: url("../img/site_fundo.svg");
     background-size: cover;
+    background-color: #f2f2f2;
 }
 
 nav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #0b0b0b;
+    border-bottom: 3px solid #d5001c;
 }
 
 nav ul {
@@ -25,46 +27,188 @@ nav ul {
 
 nav ul a {
     float: left;
-    color: #f2f2f2;
+    color: #ffffff;
     padding: 14px 16px;
     text-align: center;
     text-decoration: none;
     font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 nav ul a:hover:not(.active) {
-    background-color: lightgray;
-    color: #1c1c1c;
+    background-color: #2b2b2b;
+    color: #ffffff;
     font-weight: bold;
 }
 
 nav ul li a.active {
-    background-color: #04AA6D;
+    background-color: #d5001c;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .photo-card {
-    background-color: greenyellow;
-    width: 920px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-    color: aliceblue;
+    background-color: #111111;
+    width: 100%;
+    max-width: 920px;
+    margin: 30px auto;
+    padding: 15px;
+    color: #ffffff;
+    border-top: 4px solid #d5001c;
+
+    display: flex;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
 .intro-photo {
+    width: 50%;
+    height: 450px;
+
+    padding: 20px;
+    margin: 0;
+
+    border-radius: 12px;
+
     background-size: cover;
-    max-width: 60%;
-    height: 680px;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    position: relative;
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45);
+
+    transition: transform 0.3s ease;
 }
-#intro1{
-    background-image: url("../img/gp4.jpg");
+
+/* Efeito discreto ao passar o mouse */
+.intro-photo:hover {
+    transform: scale(1.02);
 }
-#intro2{
-    background-image: url("../img/gp2.jpg");
+
+/* Porsche 911 */
+#intro1 {
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.15)
+        ),
+        url("../img/Intro-Porsche1.jpg");
+
+    background-position: center center;
 }
-main{
-    background-color: rgba(0, 0, 0, 0.04);
+
+/* Porsche Taycan */
+#intro2 {
+    background-image:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.15)
+        ),
+        url("../img/intro-porsche2.jpg");
+
+    background-position: center center;
+}
+
+.intro-photo h1 {
+    position: relative;
+    color: #ffffff;
+
+    font-size: 1.8rem;
+    line-height: 1.2;
+
+    margin: 0 0 10px 0;
+
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+}
+
+.intro-photo p {
+    position: relative;
+    color: #ffffff;
+
+    font-size: 1rem;
+    line-height: 1.5;
+
+    margin: 0;
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Celular */
+@media (max-width: 700px) {
+
+    .banner {
+        height: 250px;
+    }
+
+    table,
+    table tbody,
+    table tr,
+    table td {
+        display: block;
+        width: 100%;
+    }
+
+    table td {
+        padding: 10px 15px;
+    }
+
+    table td img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .photo-card {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .intro-photo {
+        width: 100%;
+        height: 400px;
+    }
+
+    .intro-photo h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-photo p {
+        font-size: 0.95rem;
+    }
+}
+
+main {
+    background-color: rgba(94, 11, 11, 0.92);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+table td {
+    width: 25%;
+    padding: 15px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+table td img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
 }
